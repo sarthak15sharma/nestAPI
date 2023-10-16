@@ -8,8 +8,8 @@ export class CartitemController {
 
     // make a new cart
     @Post('newcart')
-    newCart(@Body() cartItemdto: CartItemdto): object {
-        return this.cartitemService.makeCart(cartItemdto);
+    newCart(@Body() obj: object): object {
+        return this.cartitemService.makeCart(obj);
     };
 
     // add a cartitem
