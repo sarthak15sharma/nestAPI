@@ -6,11 +6,11 @@ import { CartItem } from './entities/CartItem';
 
 export const dataSource = new DataSource({
   type: "postgres",
-  host: process.env.RDS_HOSTNAME,
+  host: "localhost",
   port: 5432,
-  username: process.env.RDS_USERNAME,
-  password: process.env.RDS_PASSWORD,
-  database: process.env.RDS_DS_NAME,
+  username: "postgres",
+  password: "sarthak",
+  database: "test",
   entities: [Product, CartItem],
   synchronize: true
 })
@@ -21,6 +21,6 @@ async function bootstrap() {
     then(() => {
       console.log('database successfully connected');
     }).catch((error) => console.log(error));
-  await app.listen(process.env.PORT);
+  await app.listen(process.env.PORT | 3000);
 }
 bootstrap();
